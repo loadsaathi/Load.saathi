@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LoadSaathi</title>
+
+<style>
+body{font-family:Arial;margin:0;background:#f5f5f5;}
+header{background:#ff6b00;color:white;text-align:center;padding:15px;}
+.hero{background:#222;color:white;text-align:center;padding:40px;}
+.container{padding:20px;}
+.card{background:white;padding:20px;margin-top:20px;border-radius:10px;}
+input,select,textarea{width:100%;padding:10px;margin:10px 0;}
+.btn{background:#ff6b00;color:white;padding:10px;border:none;width:100%;}
+img{width:100%;border-radius:10px;margin-top:10px;}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>🚚 LoadSaathi</h2>
+<p>Safe & Fast Transport Service</p>
+</header>
+
+<div class="hero">
+<h1>Ghar ya Office Shift karna hai?</h1>
+<p>1 click me booking karo</p>
+</div>
+
+<div class="container">
+
+<div class="card">
+<h3>📦 Booking Details</h3>
+
+<input type="text" id="pickup" placeholder="Pickup Location">
+<input type="text" id="drop" placeholder="Drop Location">
+<input type="text" id="weight" placeholder="Kitna saman (kg ya rooms)">
+<input type="date" id="date">
+<input type="number" id="phone" placeholder="Phone Number">
+
+<button class="btn" onclick="sendWhatsApp()">Submit & Get Price</button>
+
+</div>
+
+<div class="card">
+<h3>⭐ Rate Us</h3>
+<select id="rating">
+<option>⭐⭐⭐⭐⭐</option>
+<option>⭐⭐⭐⭐</option>
+<option>⭐⭐⭐</option>
+<option>⭐⭐</option>
+<option>⭐</option>
+</select>
+<textarea id="review" placeholder="Apna review likho"></textarea>
+<button class="btn" onclick="sendReview()">Submit Review</button>
+</div>
+
+<div class="card">
+<h3>🚚 Our Services</h3>
+<img src="https://images.unsplash.com/photo-1604147706283-9b8e2b1c5f4b">
+<img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d">
+<img src="https://images.unsplash.com/photo-1598300056393-4aac492f4344">
+</div>
+
+<div class="card">
+<h3>📞 Contact</h3>
+<a href="tel:6376747815">📞 Call</a><br><br>
+<a href="https://wa.me/916376747815">💬 WhatsApp</a>
+</div>
+
+</div>
+
+<script>
+function sendWhatsApp(){
+let pickup=document.getElementById("pickup").value;
+let drop=document.getElementById("drop").value;
+let weight=document.getElementById("weight").value;
+let date=document.getElementById("date").value;
+let phone=document.getElementById("phone").value;
+
+let msg = `New Booking:%0AFrom: ${pickup}%0ATo: ${drop}%0AItems: ${weight}%0ADate: ${date}%0APhone: ${phone}`;
+
+window.open(`https://wa.me/916376747815?text=${msg}`);
+}
+
+function sendReview(){
+let rating=document.getElementById("rating").value;
+let review=document.getElementById("review").value;
+
+let msg = `Review:%0ARating: ${rating}%0AComment: ${review}`;
+
+window.open(`https://wa.me/916376747815?text=${msg}`);
+}
+</script>
+
+</body>
+</html>
